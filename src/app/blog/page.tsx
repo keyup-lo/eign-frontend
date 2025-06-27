@@ -5,7 +5,7 @@ import BlogPage from '@/components/Blog/BlogPage';
 export default function Home() {
   return (
     <div className='body'>
-        <Navbar />
+      <Navbar />
       <BlogPage />
       <Footer />
     </div>
