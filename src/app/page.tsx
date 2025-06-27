@@ -2,7 +2,7 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/Homepage/HeroSection';
 import AboutSection from '@/components/Homepage/AboutSection';
 import HowItWorksSection from '@/components/Homepage/HowItWorksSection';
-import LocalContentSection from '@/components/Homepage/LocalContentSection';
+import LocalContentSection from '@/components/LocalContentSection';
 import IndexesSection from '@/components/Homepage/IndexesSection';
 import WhoWeServeSection from '@/components/Homepage/WhoWeServeSection';
 import CTASection from '@/components/CTASection';

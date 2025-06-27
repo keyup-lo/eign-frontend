@@ -1,0 +1,25 @@
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
+import LocalContentSection from '@/components/LocalContentSection';
+import Navbar from '@/components/Navbar';
+import HeroSection from '@/components/Platform/HeroSection';
+import MarketInsightsSection from '@/components/Platform/MarketInsightsSection';
+import TrustedBySection from '@/components/Platform/TrustedBySection';
+import WhatYouCanDoSection from '@/components/Platform/WhatYouCanDoSection';
+
+export default function Platform() {
+  return (
+    <div className='body'>
+      <div className="h-screen">
+        <Navbar />
+        <HeroSection />
+      </div>
+      <TrustedBySection />
+      <WhatYouCanDoSection />
+      <LocalContentSection />
+      <MarketInsightsSection />
+      <CTASection />
+      <Footer />
+    </div>
+  );
+}
