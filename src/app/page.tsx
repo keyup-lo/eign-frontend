@@ -11,7 +11,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <div className='body'>
-      <div className="h-screen bg-[url('/images/homepage/topimage.png')] bg-cover bg-center bg-no-repeat">
+      <div className="h-screen bg-[url('/images/homepage/home_bg.png')] bg-cover bg-center bg-no-repeat">
         <Navbar />
         <HeroSection />
       </div>
