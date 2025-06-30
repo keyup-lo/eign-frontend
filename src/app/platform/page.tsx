@@ -10,7 +10,7 @@ import WhatYouCanDoSection from '@/components/Platform/WhatYouCanDoSection';
 export default function Platform() {
   return (
     <div className='body'>
-      <div className="h-screen">
+      <div className="h-screen bg-white">
         <Navbar />
         <HeroSection />
       </div>
