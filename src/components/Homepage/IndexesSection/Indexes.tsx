@@ -14,19 +14,17 @@ export default function Index({
   main_text
 }: IndexProps) {
     return (
-      <div className="flex gap-2">
+      <div className='bg-blue-50 flex items-center justify-evenly h-22 w-128 rounded-md outline outline-blue-100'>
         <Image
             src={imageSrc}
-            alt="Company Logo"
+            alt={imageAlt}
             width={60}
             height={60}
-            className="cursor-pointer"
         />
-        <div className='flex flex-col'>
+        <div className='w-96'>
             <h2 className='font-medium text-xl'>{title}</h2>
-            <p className='font-light'>{main_text}</p>
+            <p className='font-light text-xs'>{main_text}</p>
         </div>
-
       </div>
     );
   }
