@@ -1,11 +1,13 @@
+import Image from 'next/image'
+
 export default function TrustedBySection() {
     const companies = [
-      { name: "Fathom", logo: "🏢" },
-      { name: "videoask", logo: "📹" },
-      { name: "krisp", logo: "🎵" },
-      { name: "maze", logo: "🔄" },
-      { name: "Outreach", logo: "💌" },
-      { name: "feedly", logo: "📰" }
+      { img: "/images/platform/fathom.png"},
+      { img: "/images/platform/videoask.png"},
+      { img: "/images/platform/krisp.png"},
+      { img: "/images/platform/maze.png"},
+      { img: "/images/platform/outreach.png"},
+      { img: "/images/platform/feedly.png"}
     ];
   
     return (
@@ -14,7 +16,7 @@ export default function TrustedBySection() {
           
           {/* Header Text */}
           <div className="text-center mb-12">
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-800 text-lg leading-relaxed font-medium">
               Trusted by forward-thinking teams in real estate,
               <br />
               planning, and proptech
@@ -24,17 +26,14 @@ export default function TrustedBySection() {
           {/* Company Logos Grid */}
           <div className="flex flex-wrap justify-center items-center gap-12 lg:gap-16">
             {companies.map((company, index) => (
-              <div 
+              <Image
                 key={index}
-                className="flex items-center space-x-2 text-gray-400 hover:text-gray-600 transition-colors duration-300"
-              >
-                {/* Logo placeholder - replace with actual logos */}
-                <div className="w-8 h-8 flex items-center justify-center">
-                  <span className="text-2xl">{company.logo}</span>
-                </div>
-                {/* Company name */}
-                <span className="text-xl font-medium">{company.name}</span>
-              </div>
+                src={company.img}
+                alt="Company Logo"
+                width={100}
+                height={100}
+                className="cursor-pointer"
+              />
             ))}
           </div>
         </div>
