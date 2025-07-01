@@ -1,22 +1,23 @@
+import Image from 'next/image'
+
 export default function WhereWeOperateSection() {
     return (
-      <div className="bg-blue-600 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="bg-blue-700 py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-20">
+          <div className="flex justify-center items-center gap-10">
             
             {/* Left Side - Image */}
-            <div className="relative">
-              <div className="bg-white bg-opacity-20 rounded-2xl p-4">
-                <div 
-                  className="w-full h-64 lg:h-80 bg-cover bg-center rounded-xl"
-                  style={{backgroundImage: "url('/images/about/mena-architecture.jpg')"}}
-                />
-              </div>
-            </div>
+            <Image
+              src="/images/about/operate.png"
+              alt="Company Logo"
+              width={500}
+              height={100}
+              className="cursor-pointer rounded-lg mb-8"
+            />
   
             {/* Right Side - Content */}
             <div className="text-white space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold">
+              <h2 className="text-3xl lg:text-4xl">
                 Where We Operate
               </h2>
               

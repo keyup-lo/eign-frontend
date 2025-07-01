@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import WWS from '../Homepage/WhoWeServeSection/WWS';
 import WWB from './WhatWeBelieve/WWB';
 
 export default function WhatWeBelieveSection() {
