@@ -1,8 +1,5 @@
-import Image from 'next/image'
-import { features } from 'process';
-
 interface WhoUsesProps {
-    key: number;
+  key: number;
   title: string;
   description: string;
 }

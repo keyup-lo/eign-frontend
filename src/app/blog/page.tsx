@@ -5,8 +5,10 @@ import BlogPage from '@/components/Blog/BlogPage';
 export default function Home() {
   return (
     <div className='body'>
-      <Navbar />
-      <BlogPage />
+      <div className="bg-[url('/images/blog/blog_bg.png')] bg-cover bg-center bg-no-repeat">
+        <Navbar />
+        <BlogPage />
+      </div>
       <Footer />
     </div>
   );
