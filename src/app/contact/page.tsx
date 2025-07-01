@@ -7,7 +7,7 @@ import ContactFormSection from '@/components/Contact/ContactFormSection';
 
 export default function Home() {
   return (
-    <div className='body'>
+    <div className='body bg-white'>
       <Navbar />
       <ContactHeroSection />
       <ContactFormSection />
