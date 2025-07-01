@@ -20,14 +20,6 @@ export default function ContactFormSection() {
     }))
   }
 
-  const handleCheckboxChange = (value) => {
-    setFormData(prev => ({
-      ...prev,
-      interested: prev.interested.includes(value)
-        ? prev.interested.filter(item => item !== value)
-        : [...prev.interested, value]
-    }))
-  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -37,11 +29,11 @@ export default function ContactFormSection() {
 
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+      <div className="max-w-7xl mx-20">
+        <div className="flex jusitfy-center items-center gap-20">
           
           {/* Left Side - Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8 w-[40%]">
             <div>
               <p className="text-gray-600 leading-relaxed">
                 For general enquiries, please fill out the form to get in touch. Alternatively, if you know your project details - head over to our project briefing form or book through over by video.
@@ -49,7 +41,7 @@ export default function ContactFormSection() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">More contact forms:</h3>
+              <h3 className="text-lg text-gray-900">Hate contact forms?</h3>
               
               <div className="space-y-2">
                 <div>
@@ -58,29 +50,26 @@ export default function ContactFormSection() {
                 </div>
                 
                 <div>
-                  <span className="font-medium text-gray-900">Phone:</span>
-                  <span className="text-gray-700 ml-2">+971 (0) 50 123 456 789</span>
+                  <span className="font-medium text-gray-900">Phone (optional):</span>
+                  <span className="text-gray-600 ml-2">[+971 XXX XXX XXX]</span>
                 </div>
                 
                 <div>
                   <span className="font-medium text-gray-900">Location:</span>
-                  <span className="text-gray-700 ml-2">Dubai, UAE</span>
+                  <span className="text-gray-600 ml-2">Dubai, UAE</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="bg-gray-50 rounded-2xl p-8">
+          <div className="w-[60%]">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Form</h2>
             
             <div className="space-y-6">
               {/* Name and Company Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Name *
-                  </label>
                   <input
                     type="text"
                     name="name"
@@ -88,21 +77,18 @@ export default function ContactFormSection() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Your name"
+                    placeholder="Full name"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Work Scope
-                  </label>
                   <input
-                    type="text"
-                    name="workScope"
+                    type="email"
+                    name="email"
                     value={formData.workScope}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Your work scope"
+                    placeholder="Work Email"
                   />
                 </div>
               </div>
@@ -110,23 +96,17 @@ export default function ContactFormSection() {
               {/* Company and Email Row */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Company
-                  </label>
                   <input
                     type="text"
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Company name"
+                    placeholder="Company"
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email *
-                  </label>
                   <input
                     type="email"
                     name="email"
@@ -134,18 +114,18 @@ export default function ContactFormSection() {
                     onChange={handleInputChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="your@email.com"
+                    placeholder="Phone (Optional)"
                   />
                 </div>
               </div>
 
               {/* What are you interested in? */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-4">
+                <label className="block text-sm font-semibold text-gray-700 mb-4">
                   What are you interested in?
                 </label>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div className="flex items-center flex-wrap gap-5">
                   {[
                     'API Access',
                     'Dashboard',
@@ -153,32 +133,17 @@ export default function ContactFormSection() {
                     'Expanding Partnerships',
                     'General Inquiry'
                   ].map((option) => (
-                    <label key={option} className="flex items-center space-x-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={formData.interested.includes(option)}
-                        onChange={() => handleCheckboxChange(option)}
-                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                      />
-                      <span className="text-gray-700 text-sm">{option}</span>
-                    </label>
+                    <div className='px-4 pr-6 py-2 bg-gray-100 outline outline-gray-500 rounded'>
+                      <label key={option} className="flex items-center space-x-3 cursor-pointer">
+                        <input
+                          type="radio"
+                          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                        />
+                        <span className="text-gray-700 text-sm font-semibold">{option}</span>
+                      </label>
+                    </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Tell us about your project or inquiry..."
-                />
               </div>
 
               {/* Submit Button */}
@@ -190,9 +155,7 @@ export default function ContactFormSection() {
                 Send Message
               </button>
               
-              <p className="text-xs text-gray-500 text-center">
-                By submitting this form you agree to our terms and conditions and our Privacy Policy which explains how we may collect, use and disclose your personal information including to third parties.
-              </p>
+              <p className="text-xs text-gray-500 text-center"> By submitting this form I accept the Privacy Policy of this site.</p>
             </div>
           </div>
         </div>
