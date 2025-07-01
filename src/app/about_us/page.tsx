@@ -8,7 +8,7 @@ import WhereWeOperateSection from '@/components/About/WhereWeOperateSection';
 
 export default function Home() {
   return (
-    <div className='body'>
+    <div className='body bg-white'>
       <Navbar />
       <AboutHeroSection />
       <OurStorySection />
