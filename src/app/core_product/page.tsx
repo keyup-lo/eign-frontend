@@ -10,7 +10,9 @@ export default function Home() {
     <div className='body'>
       <Navbar />
       <CoreProductHero />
-      <Core8IndexesSection />
+      <div id='indexes'>
+        <Core8IndexesSection />
+      </div>
       <ScoringMethodologySection />
       <CTASection />
       <Footer />

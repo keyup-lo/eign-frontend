@@ -10,7 +10,9 @@ export default function Home() {
     <div className='body bg-white'>
       <Navbar />
       <ContactHeroSection />
-      <ContactFormSection />
+      <div id="contact-form">
+        <ContactFormSection/>
+      </div>
       <CTASection />
       <Footer />
     </div>

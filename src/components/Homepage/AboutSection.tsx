@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import AboutButton from './AboutSection/AboutButton'
 import HouseSVG from './AboutSection/House'
 
@@ -45,7 +46,9 @@ export default function AboutSection() {
               </p>
   
               {/* CTA Button */}
-              <AboutButton>Request a Demo</AboutButton>
+              <Link href='/contact#contact-form'>
+                <AboutButton>Request a Demo</AboutButton>
+              </Link>
             </div>
           </div>
   
@@ -66,6 +69,7 @@ export default function AboutSection() {
                 title_color='black'
                 text_color="#4B5563"
                 buttonText="See Our Sources"
+                link_to='/core_product#indexes'
               />
 
               <HouseSVG
@@ -78,6 +82,7 @@ export default function AboutSection() {
                 title_color='white'
                 text_color="white"
                 buttonText="Explore the Indexes"
+                link_to='/core_product#indexes'
               />
 
               <HouseSVG
@@ -90,6 +95,7 @@ export default function AboutSection() {
                 title_color='black'
                 text_color="#4B5563"
                 buttonText="Request Access"
+                link_to='/contact#contact-form'
               />
 
             </div>

@@ -39,9 +39,10 @@ export default function HowItWorksSection() {
                 />
 
                 <ListItem 
-                  imageSrc='/images/homepage/hiw_4.png'
+                  imageSrc='/images/homepage/data_trust.png'
                   title="Data You Can Trust"
                   main_text="Our insights are built from verified sources like Google, OpenStreetMap, KFDA, satellite imagery, city data, and more — all processed through secure ETL pipelines."
+                  w="25%"
                 />
 
               </div>

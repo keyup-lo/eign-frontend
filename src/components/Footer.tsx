@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
           <div className='flex flex-col align-center gap-2'>
             <h2 className='font-medium text-green-400'>Resources</h2>
-            <Link className='font-medium 'href='/'>Blog</Link>
+            <Link className='font-medium 'href='/blog'>Blog</Link>
             <Link className='font-medium 'href='/'>Case Studies</Link>
             <Link className='font-medium 'href='/'>News</Link>
           </div>

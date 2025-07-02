@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 import AboutButton from './AboutButton';
 
 interface HouseSVGProps {
@@ -11,6 +12,7 @@ interface HouseSVGProps {
   title_color: string;
   text_color: string;
   buttonText: string;
+  link_to: string;
 }
 
 export default function HouseSVG({ 
@@ -23,6 +25,7 @@ export default function HouseSVG({
   title_color,
   text_color,
   buttonText,
+  link_to
 }: HouseSVGProps) {
   return (
     <svg width="345" height="354" viewBox="0 0 345 354" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +47,9 @@ export default function HouseSVG({
                 <p className="text-sm font-light text-gray-600" style={{ color: text_color}}>
                     {body}
                 </p>
-                <AboutButton>{buttonText}</AboutButton>
+                <Link href={link_to}>
+                  <AboutButton>{buttonText}</AboutButton>
+                </Link>
             </div>
         </foreignObject>
     </svg>

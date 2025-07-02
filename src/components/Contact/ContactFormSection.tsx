@@ -133,8 +133,8 @@ export default function ContactFormSection() {
                     'Expanding Partnerships',
                     'General Inquiry'
                   ].map((option) => (
-                    <div className='px-4 pr-6 py-2 bg-gray-100 outline outline-gray-500 rounded'>
-                      <label key={option} className="flex items-center space-x-3 cursor-pointer">
+                    <div key={option} className='px-4 pr-6 py-2 bg-gray-100 outline outline-gray-500 rounded'>
+                      <label className="flex items-center space-x-3 cursor-pointer">
                         <input
                           type="radio"
                           className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"

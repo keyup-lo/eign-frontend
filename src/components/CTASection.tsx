@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function CTASection() {
     return (
       <div className="h-[80vh] bg-[url('/images/cta_bg.png')] bg-cover bg-center bg-no-repeat">
@@ -23,16 +25,18 @@ export default function CTASection() {
   
             {/* CTA Button */}
             <div className="pt-4">
-              <button className="bg-emerald-400 hover:bg-emerald-600 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 inline-flex items-center space-x-2 group">
-                <span>Request a Demo</span>
-                <svg 
-                  className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
-                  fill="currentColor" 
-                  viewBox="0 0 20 20"
-                >
-                  <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
+              <Link href='/contact#contact-form'>
+                <button className="bg-emerald-400 hover:bg-emerald-600 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 inline-flex items-center space-x-2 group cursor-pointer">
+                  <span>Request a Demo</span>
+                  <svg 
+                    className="w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                  </svg>
+                </button>
+              </Link>
             </div>
           </div>
         </div>

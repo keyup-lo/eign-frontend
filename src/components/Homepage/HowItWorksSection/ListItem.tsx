@@ -5,26 +5,30 @@ interface ItemsProps {
   imageAlt?: string;
   title: string;
   main_text: string;
+  h?:string;
+  w?:string;
 }
 
 export default function ListItem({ 
   imageSrc,
   imageAlt = "icon",
   title,
-  main_text
+  main_text,
+  w = "15%",
+  h = "15%"
 }: ItemsProps) {
     return (
-      <div className="flex gap-2">
+      <div className="flex justify-center items-center gap-2">
         <Image
             src={imageSrc}
             alt="Company Logo"
-            width={60}
-            height={60}
-            className="cursor-pointer"
+            width={100}
+            height={100}
+            className={`cursor-pointer w-[${w}] h-[${h}]`}
         />
         <div className='flex flex-col'>
-            <h2 className='font-medium text-xl'>{title}</h2>
-            <p className='font-light'>{main_text}</p>
+          <h2 className='font-medium text-xl'>{title}</h2>
+          <p className='font-light'>{main_text}</p>
         </div>
 
       </div>
