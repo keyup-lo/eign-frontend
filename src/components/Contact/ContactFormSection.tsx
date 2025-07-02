@@ -3,30 +3,6 @@
 import { useState } from 'react'
 
 export default function ContactFormSection() {
-  const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    workScope: '',
-    interested: [],
-    message: ''
-  })
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission here
-  }
-
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-20">
@@ -73,8 +49,7 @@ export default function ContactFormSection() {
                   <input
                     type="text"
                     name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
+                    value=""
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Full name"
@@ -85,8 +60,7 @@ export default function ContactFormSection() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.workScope}
-                    onChange={handleInputChange}
+                    value=""
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Work Email"
                   />
@@ -99,8 +73,7 @@ export default function ContactFormSection() {
                   <input
                     type="text"
                     name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
+                    value=""
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Company"
                   />
@@ -110,8 +83,7 @@ export default function ContactFormSection() {
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
+                    value=""
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Phone (Optional)"
@@ -149,7 +121,6 @@ export default function ContactFormSection() {
               {/* Submit Button */}
               <button
                 type="submit"
-                onClick={handleSubmit}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300"
               >
                 Send Message
