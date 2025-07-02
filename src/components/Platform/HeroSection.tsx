@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function PlatformHeroSection() {
     return (
@@ -23,9 +24,11 @@ export default function PlatformHeroSection() {
   
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-emerald-400 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium transition-colors">
-                  Book a Demo
-                </button>
+                <Link href='/contact#contact-form'>
+                  <button className="bg-emerald-400 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium transition-colors cursor-pointer">
+                    Book a Demo
+                  </button>
+                </Link>
                 <button className="bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 border border-white border-opacity-30 px-6 py-3 rounded-lg font-medium transition-all">
                   Download Sample Report
                 </button>

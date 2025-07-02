@@ -1,4 +1,8 @@
+"use client"
+
 import Image from 'next/image'
+import Link from 'next/link'
+import { useState, useEffect } from 'react'
 import WYG from './MarketInsightsSection/WYG';
 import WhoUses from './MarketInsightsSection/WhoUses';
 
@@ -25,31 +29,50 @@ export default function MarketInsightsSection() {
   
     const userTypes = [
       {
+        id: 1,
         title: "Platforms",
         description: "Enrich listings and drive smarter search",
-        icon: "🌐"
+        image: "/images/platform/platforms.png"
       },
       {
+        id: 2,
         title: "Developers",
         description: "Compare plots, plan more effectively",
-        icon: "🏗️"
+        image: "/images/platform/developers.png"
       },
       {
+        id: 3,
         title: "Investors",
         description: "Rank neighborhoods and assess with confidence",
-        icon: "📈"
+        image: "/images/platform/investors.png"
       },
       {
+        id: 4,
         title: "Planners",
         description: "Align infrastructure with real-world indicators",
-        icon: "📋"
+        image: "/images/platform/planners.png"
       },
       {
+        id: 5,
         title: "Product Teams",
         description: "Launch features powered by urban intelligence",
-        icon: "⚙️"
+        image: "/images/platform/product_teams.png"
       }
     ];
+
+    const [currentIndex, setCurrentIndex] = useState(1)
+    const [isAnimating, setIsAnimating] = useState(false)
+  
+    // Function to handle manual selection
+    const handleDestinationClick = (index: number) => {
+      setCurrentIndex(index)
+      setIsAnimating(true)
+      
+      // Reset animation after 3 seconds and continue normal cycle
+      setTimeout(() => {
+        setIsAnimating(false)
+      }, 3000)
+    }
   
     return (
       <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
@@ -78,9 +101,11 @@ export default function MarketInsightsSection() {
               <h3 className="text-3xl font-bold mb-6">
                 Powerful Market <span className="text-blue-100 font-normal">Insights</span>
               </h3>
-              <button className="bg-emerald-400 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium transition-colors w-fit">
-                Book a Demo
-              </button>
+              <Link href='/contact#contact-form'>
+                <button className="bg-emerald-400 hover:bg-emerald-500 text-white px-6 py-3 rounded-lg font-medium transition-colors w-fit">
+                  Book a Demo
+                </button>
+              </Link>
             </div>
           </div>
   
@@ -94,17 +119,20 @@ export default function MarketInsightsSection() {
               <WYG
                 title="Data Engine"
                 features={dataEngineFeatures}
-                button_text="See Our Sources" />
+                button_text="See Our Sources"
+                link_to='/core_product#indexes' />
 
               <WYG
                 title="AI Modeling"
                 features={aiModelingFeatures}
-                button_text="Explore the Indexes" />
+                button_text="Explore the Indexes"
+                link_to='/core_product#indexes' />
               
               <WYG
                 title="Insight Delivery"
                 features={insightDeliveryFeatures}
-                button_text="Request Access" />
+                button_text="Request Access"
+                link_to='/contact#contact-form' />
             </div>
           </div>
   
@@ -119,15 +147,19 @@ export default function MarketInsightsSection() {
                 {userTypes.map((userType, index) => (
                   <WhoUses
                     key={index}
+                    index={userType.id}
                     title={userType.title}
-                    description={userType.description} />
+                    description={userType.description} 
+                    onClick={() => handleDestinationClick(index)}
+                    currentIndex={currentIndex}
+                    isAnimating={isAnimating}/>
                   
                 ))}
               </div>
   
               {/* Right - Demo Image */}
               <Image
-                  src="/images/platform/who_uses.png"
+                  src={userTypes[currentIndex].image}
                   alt="Company Logo"
                   width={550}
                   height={500}

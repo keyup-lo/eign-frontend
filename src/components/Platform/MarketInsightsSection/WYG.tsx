@@ -1,16 +1,19 @@
 import Image from 'next/image'
+import Link from 'next/link';
 import { features } from 'process';
 
 interface WYGProps {
   title: string;
   features: string[];
-  button_text: string
+  button_text: string;
+  link_to: string
 }
 
 export default function WYG({
   title,
   features,
-  button_text
+  button_text,
+  link_to
 }: WYGProps) {
     return (
         <div className="bg-blue-50 rounded-xl p-6 flex flex-col justify-center items-center w-[90%]">
@@ -30,9 +33,11 @@ export default function WYG({
                     </li>
                 ))}
             </ul>
-            <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm">
-                {button_text}
-            </button>
+            <Link href={link_to}>
+                <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-lg font-medium transition-colors text-sm cursor-pointer">
+                    {button_text}
+                </button>
+            </Link>
         </div>
     );
   }

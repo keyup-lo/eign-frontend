@@ -1,26 +1,34 @@
 interface WhoUsesProps {
-  key: number;
+  index: number;
   title: string;
   description: string;
+  onClick: ()=>void;
+  currentIndex: number;
+  isAnimating: boolean
 }
 
 export default function WhoUses({
-  key,
+  index,
   title,
-  description
+  description,
+  onClick,
+  currentIndex,
+  isAnimating
 }: WhoUsesProps) {
+  const isActive = index === currentIndex;
     return (
-        <div 
-            key={key}
-            className="bg-gray-100 rounded-lg p-4 transition-colors cursor-pointer outline outline-blue-600 flex justify-between items-center gap-5"
-            >
-            <div className="flex flex-col justify-between gap-2">
-                <h4 className="font-bold text-blue-700">{title}</h4>
-                <p className="text-xs text-light">{description}</p>
-            </div>
-            <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-            </svg>
-        </div>
+      <div 
+          key={index}
+          className="bg-gray-100 rounded-lg p-4 transition-colors cursor-pointer outline outline-blue-600 flex justify-between items-center gap-5"
+          onClick={onClick}
+          >
+          <div className="flex flex-col justify-between gap-2">
+              <h4 className="font-bold text-blue-700">{title}</h4>
+              <p className="text-xs text-light">{description}</p>
+          </div>
+          <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+          </svg>
+      </div>
     );
   }
