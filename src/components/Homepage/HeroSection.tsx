@@ -34,11 +34,12 @@ export default function HeroSection() {
             {/* Description */}
             <p className="hero-text text-gray-500 font-normal text-sm leading-relaxed max-w-lg">
               Eign is an AI-powered location intelligence platform that transforms real-world data into powerful insights for real estate decision-makers. We turn cities into data-rich environments so you can build, invest, and plan with unmatched confidence.
+              <span className="over-text text-gray-500 text-xs hidden">
+                Type an address to see scores, insights, and location value in seconds.
+              </span>            
             </p>
 
-            <p className="over-text text-gray-500 text-xs hidden">
-                Type an address to see scores, insights, and location value in seconds.
-            </p>
+            
 
             {/* Search Bar */}
             <div className="space-y-3">
