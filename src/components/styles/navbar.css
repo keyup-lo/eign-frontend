@@ -1,0 +1,17 @@
+.nav-container {
+    /* Mobile: flex layout with smaller margins */
+    margin: 0 10%; /* mx-6 equivalent */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Desktop: grid layout with larger margins */
+@media (min-width: 768px) {
+    .nav-container {
+        margin: 0 5%; /* mx-24 equivalent */
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-content: normal;
+    }
+}

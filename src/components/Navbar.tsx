@@ -1,8 +1,9 @@
 "use client"
 
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
+import './styles/navbar.css';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Navbar() {
     <>
     <nav className=''>
       <div className="max-w-7xl sm:px-6 lg:px-8 py-6">
-        <div className="mx-12 lg:mx-24 grid grid-cols-[1fr_1fr] lg:grid-cols-[1fr_2fr_1fr] md:grid-cols-[1fr_2fr_1fr]  items-center w-full">
+        <div className="nav-container">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -32,10 +33,10 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href="/about_us" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium lg:text-md">
-              About Us
+              About
             </Link>
             <Link href="/core_product" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-              Core Product
+              Product
             </Link>
             <Link href="/platform" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               Platform
@@ -96,14 +97,14 @@ export default function Navbar() {
             className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
             onClick={toggleMenu}
           >
-            About Us
+            About
           </Link>
           <Link
             href="/core_product" 
             className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
             onClick={toggleMenu}
           >
-            Core Product
+            Product
           </Link>
           <Link 
             href="/platform" 

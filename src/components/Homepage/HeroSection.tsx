@@ -1,6 +1,7 @@
 "use client"
 import { useState } from 'react'
 import Image from 'next/image'
+import '../styles/homepage/herosection.css';
 
 export default function HeroSection() {
   const [searchLocation, setSearchLocation] = useState('Dubai, UAE')
@@ -8,8 +9,8 @@ export default function HeroSection() {
   return (
     <div className="relative h-[calc(100vh-4rem)] overflow-hidden flex flex-col">      
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-24 px-4 sm:px-6 lg:px-8 flex-1 flex items-start pt-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">          
+      <div className="hero-content relative z-10 max-w-7xl mx-24 px-4 sm:px-6 lg:px-8 flex-1 flex items-start pt-4">
+        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">          
           {/* Left Content - Text and Search */}
           <div className="space-y-6">
             {/* Badge */}
@@ -23,7 +24,7 @@ export default function HeroSection() {
 
             {/* Main Heading */}
             <div className="space-y-2">
-              <h1 className="text-3xl lg:text-4xl font-normal leading-tight">
+              <h1 className="hero-title text-3xl lg:text-4xl font-normal leading-tight">
                 The <span className="text-blue-700">Intelligence</span> Behind
                 <br />
                 Every Location
@@ -31,8 +32,12 @@ export default function HeroSection() {
             </div>
 
             {/* Description */}
-            <p className="text-gray-500 font-normal text-sm leading-relaxed max-w-lg">
+            <p className="hero-text text-gray-500 font-normal text-sm leading-relaxed max-w-lg">
               Eign is an AI-powered location intelligence platform that transforms real-world data into powerful insights for real estate decision-makers. We turn cities into data-rich environments so you can build, invest, and plan with unmatched confidence.
+            </p>
+
+            <p className="over-text text-gray-500 text-xs hidden">
+                Type an address to see scores, insights, and location value in seconds.
             </p>
 
             {/* Search Bar */}
@@ -57,7 +62,7 @@ export default function HeroSection() {
                   Search
                 </button>
               </div>
-              <p className="text-gray-500 text-xs">
+              <p className="under-text text-gray-500 text-xs">
                 Type an address to see scores, insights, and location value in seconds.
               </p>
             </div>
