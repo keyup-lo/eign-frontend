@@ -1,7 +1,7 @@
 "use client"
 import { useState } from 'react'
 import Image from 'next/image'
-import '../styles/homepage/herosection.css';
+import '../styles/homepage/hero-section.css';
 
 export default function HeroSection() {
   const [searchLocation, setSearchLocation] = useState('Dubai, UAE')

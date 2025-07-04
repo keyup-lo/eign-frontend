@@ -9,7 +9,7 @@
 
     .hero-text{
         font-size: medium;
-        color: black;
+        color: #424242;
     }
 
     .under-text{
@@ -18,7 +18,7 @@
 
     .over-text{
         display: block;
-        color: black;
+        color: #424242;
         font-size: small;
         margin-top: 5%;
     }
