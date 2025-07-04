@@ -2,13 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AboutButton from './AboutSection/AboutButton'
 import HouseSVG from './AboutSection/House'
+import '../styles/homepage/about-section.css';
 
 export default function AboutSection() {
     return (
       <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         {/* What is Eign Section */}
-        <div className="max-w-7xl mx-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 items-center mb-24">            
+        <div className="wie max-w-7xl mx-24">
+          <div className="about-top grid grid-cols-1 lg:grid-cols-2 gap-3 items-center mb-24">            
             {/* Left Side - Image with overlays */}
             <div className="relative">
               <Image
@@ -21,21 +22,23 @@ export default function AboutSection() {
             </div>
   
             {/* Right Side - Content */}
-            <div className="space-y-6">
+            <div className="wie-content space-y-6">
               {/* Icon */}
-              <Image
-                src="/images/homepage/wie_home.png"
-                alt="Company Logo"
-                width={50}
-                height={50}
-                className="cursor-pointer"
-              />
-  
-              {/* Heading */}
-              <h2 className="text-3xl font-normal text-gray-900">
-                What is <span className="text-blue-700">Eign</span>?
-              </h2>
-  
+              <div className='icon-title'>
+                <Image
+                  src="/images/homepage/wie_home.png"
+                  alt="Company Logo"
+                  width={50}
+                  height={50}
+                  className="cursor-pointer"
+                />
+    
+                {/* Heading */}
+                <h2 className="text-3xl font-normal text-gray-900">
+                  What is <span className="text-blue-700">Eign</span>?
+                </h2>
+              </div>
+              
               {/* Description */}
               <p className="text-blue-700 font-medium text-sm">
                 Eign is a proptech platform that decodes the complexity of place.
