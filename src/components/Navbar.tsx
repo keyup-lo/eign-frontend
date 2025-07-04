@@ -2,16 +2,20 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function Navbar() {
-  const [productsOpen, setProductsOpen] = useState(false)
-  const [resourcesOpen, setResourcesOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
+    <>
     <nav className=''>
       <div className="max-w-7xl sm:px-6 lg:px-8 py-6">
-        <div className="mx-24 flex justify-between items-center h-16">
+        <div className="mx-12 lg:mx-24 grid grid-cols-[1fr_1fr] lg:grid-cols-[1fr_2fr_1fr] md:grid-cols-[1fr_2fr_1fr]  items-center w-full">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
@@ -27,75 +31,103 @@ export default function Navbar() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-              Home
+            <Link href="/about_us" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium lg:text-md">
+              About Us
+            </Link>
+            <Link href="/core_product" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              Core Product
+            </Link>
+            <Link href="/platform" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              Platform
+            </Link>
+            <Link href="/contact" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              Contact
+            </Link>
+            <Link href="/blog" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              Blog
             </Link>
             
-            {/* Products Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setProductsOpen(!productsOpen)}
-                className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-              >
-                Products
-                <svg className="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              {productsOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border">
-                  <Link href="/product1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                    Product 1
-                  </Link>
-                  <Link href="/product2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                    Product 2
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Resources Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setResourcesOpen(!resourcesOpen)}
-                className="flex items-center text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium"
-              >
-                Resources
-                <svg className="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                </svg>
-              </button>
-              {resourcesOpen && (
-                <div className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg border">
-                  <Link href="/blog" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                    Blog
-                  </Link>
-                  <Link href="/docs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">
-                    Documentation
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            <Link href="/pricing" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-              Pricing
-            </Link>
           </div>
 
-          {/* Right Side Buttons */}
-          <div className="flex items-center space-x-4">
-            <Link href="/login" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
-              Log in
-            </Link>
-            <Link 
-              href="/demo" 
-              className="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600"
             >
-              Request a Demo
-            </Link>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
           </div>
         </div>
       </div>
     </nav>
+
+    {/* Full Screen Mobile Menu Overlay */}
+    <div className={`md:hidden fixed inset-0 bg-white z-40 transition-all duration-300 ease-in-out ${
+        isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+      }`}>
+        
+        {/* Close Button */}
+        <button
+          onClick={toggleMenu}
+          className="absolute top-6 right-6 text-gray-700 hover:text-red-600 transition-colors z-50"
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Menu Items */}
+        <div className="flex flex-col items-center justify-center h-full space-y-8">
+          <Link 
+            href="/" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            Home
+          </Link>
+          <Link
+            href="/about_us" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            About Us
+          </Link>
+          <Link
+            href="/core_product" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            Core Product
+          </Link>
+          <Link 
+            href="/platform" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            Platform
+          </Link>
+          <Link
+            href="/contact" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            Contact
+          </Link>
+          <Link
+            href="/blog" 
+            className="text-2xl text-gray-700 hover:text-blue-600 transition-colors transform hover:scale-105"
+            onClick={toggleMenu}
+          >
+            Blog
+          </Link>
+        </div>
+      </div>
+    </>
   )
 }
