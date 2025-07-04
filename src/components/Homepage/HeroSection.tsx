@@ -12,7 +12,7 @@ export default function HeroSection() {
       <div className="hero-content relative z-10 max-w-7xl mx-24 px-4 sm:px-6 lg:px-8 flex-1 flex items-start pt-4">
         <div className=" grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">          
           {/* Left Content - Text and Search */}
-          <div className="space-y-6">
+          <div className="main-container space-y-6">
             {/* Badge */}
             <Image
               src="/images/homepage/home_badge.png"
