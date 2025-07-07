@@ -1,0 +1,13 @@
+@media (max-width: 768px){
+    .content{
+        flex-wrap: wrap;
+    }
+
+    .content_rc, .content_lc{
+        width: 100%;
+    }
+
+    .os_holder{
+        margin: 0 5%;
+    }
+}

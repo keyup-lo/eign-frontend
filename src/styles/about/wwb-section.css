@@ -1,0 +1,13 @@
+@media (max-width: 768px){
+    .content_img{
+        display: none;
+    }
+
+    .belief_card{
+        width: 100%;
+    }
+
+    .wwb_holder{
+        margin: 0 5%;
+    }
+}

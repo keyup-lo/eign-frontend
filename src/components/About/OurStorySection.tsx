@@ -1,8 +1,10 @@
 import Image from 'next/image'
+import '../../styles/about/os-section.css';
+
 
 export default function OurStorySection() {
     return (
-      <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 mx-20">
+      <div className="os_holder bg-white py-16 px-4 sm:px-6 lg:px-8 mx-20">
         <div className="max-w-7xl mx-auto">
           
           {/* Header Image */}
@@ -15,10 +17,10 @@ export default function OurStorySection() {
           />
   
           {/* Content Section */}
-          <div className="flex justify-evenly items-center gap-10">
+          <div className="content flex justify-evenly items-center gap-10">
             
             {/* Left Column */}
-            <div className="space-y-6 w-[90%]">
+            <div className="content_lc space-y-6 w-[90%]">
               <h2 className="text-3xl text-gray-900">
                 Our Story
               </h2>
@@ -39,7 +41,7 @@ export default function OurStorySection() {
             </div>
   
             {/* Right Column */}
-            <div className="space-y-4 text-gray-600 leading-relaxed text-sm w-[80%]">
+            <div className="content_rc space-y-4 text-gray-600 leading-relaxed text-sm w-[80%]">
               <p>
                 Today, Eign helps platforms, investors, developers, and planners unlock the full potential of every place — with speed, confidence, and precision.
               </p>

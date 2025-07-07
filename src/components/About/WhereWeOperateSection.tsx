@@ -1,10 +1,11 @@
 import Image from 'next/image'
+import '../../styles/about/wwo-section.css';
 
 export default function WhereWeOperateSection() {
     return (
       <div className="bg-blue-700 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-20">
-          <div className="flex justify-center items-center gap-10">
+        <div className="wwo max-w-7xl mx-20">
+          <div className="wwo_holder flex justify-center items-center gap-10">
             
             {/* Left Side - Image */}
             <Image

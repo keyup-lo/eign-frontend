@@ -1,0 +1,9 @@
+@media (max-width: 768px){
+    .wwo{
+        margin: 0 7%;
+    }
+
+    .wwo_holder{
+        flex-wrap: wrap-reverse;
+    }
+}
