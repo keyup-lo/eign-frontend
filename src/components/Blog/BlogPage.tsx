@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import '../../styles/blog/blog-page.css';
 
 export default function BlogPage() {
   
@@ -10,7 +11,7 @@ export default function BlogPage() {
             <p className='font-light text-sm'>Stay on top of announcements and research, find media assets, and learn about our experts</p>
           </div>
         </div>
-        <div className="grid grid-cols-[2.5fr_1fr] gap-4">
+        <div className="page_holder grid grid-cols-[2.5fr_1fr] gap-4">
           
           {/** Larger side */}
           <div className="">
@@ -21,7 +22,7 @@ export default function BlogPage() {
               height={100}
               className="cursor-pointer rounded-lg"
             />
-            <div className='text-emerald-500 flex justify-between items-center w-[50%] text-xs font-semibold my-3'>
+            <div className='blog_info text-emerald-500 flex justify-between items-center w-[50%] text-xs font-semibold my-3'>
               <p><span className="mr-2">•</span>Buy Guide</p>
               <p><span className="mr-2">•</span>Feburary 17, 2018</p>
               <p><span className="mr-2">•</span>5 min read</p>
