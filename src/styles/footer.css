@@ -1,0 +1,21 @@
+.hide{
+    display: none;
+}
+
+.showdiv{
+    display: none;
+}
+
+@media (max-width: 768px){
+    .hidediv{
+        display: none;
+    }
+
+    .showdiv{
+        display: inline-flex;
+    }
+
+    .footer{
+        padding-inline: 5%;
+    }
+}

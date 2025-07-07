@@ -1,0 +1,16 @@
+@media (max-width: 768px){
+    .hiw-holder{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .hiw-margin{
+        margin-inline: 5%;
+    }
+
+    .hiw-title{
+        display: none;
+    }
+}
