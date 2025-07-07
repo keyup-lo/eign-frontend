@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import WWB from './WhatWeBelieve/WWB';
+import '../../styles/about/wwb-section.css';
 
 export default function WhatWeBelieveSection() {
     const beliefs = [
@@ -26,7 +27,7 @@ export default function WhatWeBelieveSection() {
     ];
   
     return (
-      <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 mx-20">
+      <div className="wwb_holder bg-white py-16 px-4 sm:px-6 lg:px-8 mx-20">
         <div className="max-w-7xl mx-auto">
           
           {/* Header */}
@@ -40,7 +41,7 @@ export default function WhatWeBelieveSection() {
           <div className="flex justify-center items-center gap-10">
             
             {/* Left Side - Belief Cards */}
-            <div className="space-y-4 w-[50%]">
+            <div className="belief_card space-y-4 w-[50%]">
               {beliefs.map((belief, index) => (
                 <WWB 
                   key={index}
@@ -55,7 +56,7 @@ export default function WhatWeBelieveSection() {
               alt="Company Logo"
               width={500}
               height={100}
-              className="cursor-pointer rounded-lg mb-8 w-[50%]"
+              className="content_img cursor-pointer rounded-lg mb-8 w-[50%]"
             />
           </div>
         </div>
