@@ -1,15 +1,17 @@
 "use client"
 
 import { useState } from 'react'
+import '../../styles/contact/form-section.css';
+
 
 export default function ContactFormSection() {
   return (
     <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-20">
-        <div className="flex jusitfy-center items-center gap-20">
+      <div className="holder max-w-7xl mx-20">
+        <div className="contact_section flex jusitfy-center items-center gap-20">
           
           {/* Left Side - Contact Information */}
-          <div className="space-y-8 w-[40%]">
+          <div className="contact_info space-y-8 w-[40%]">
             <div>
               <p className="text-gray-600 leading-relaxed">
                 For general enquiries, please fill out the form to get in touch. Alternatively, if you know your project details - head over to our project briefing form or book through over by video.
@@ -39,7 +41,7 @@ export default function ContactFormSection() {
           </div>
 
           {/* Right Side - Contact Form */}
-          <div className="w-[60%]">
+          <div className="contact_form w-[60%]">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Contact Form</h2>
             
             <div className="space-y-6">
@@ -93,29 +95,13 @@ export default function ContactFormSection() {
 
               {/* What are you interested in? */}
               <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-4">
-                  What are you interested in?
-                </label>
-                
-                <div className="flex items-center flex-wrap gap-5">
-                  {[
-                    'API Access',
-                    'Dashboard',
-                    'Embedding Scores',
-                    'Expanding Partnerships',
-                    'General Inquiry'
-                  ].map((option) => (
-                    <div key={option} className='px-4 pr-6 py-2 bg-gray-100 outline outline-gray-500 rounded'>
-                      <label className="flex items-center space-x-3 cursor-pointer">
-                        <input
-                          type="radio"
-                          className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
-                        />
-                        <span className="text-gray-700 text-sm font-semibold">{option}</span>
-                      </label>
-                    </div>
-                  ))}
-                </div>
+              <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Enter your message here..."
+                  rows={4}
+                  className={`w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-y transition-colors`}
+                />
               </div>
 
               {/* Submit Button */}
