@@ -1,0 +1,9 @@
+@media (max-width: 768px){
+    .hero_img{
+        display: none;
+    }
+
+    .holder{
+        margin: 0 10%;
+    }
+}

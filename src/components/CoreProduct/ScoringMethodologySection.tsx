@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import '../../styles/core_product/scoring-section.css';
 
 export default function ScoringMethodologySection() {
     const methodologyPoints = [
@@ -26,7 +27,7 @@ export default function ScoringMethodologySection() {
   
     return (
       <div className="bg-blue-100 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-20">
+        <div className="scoring_holder max-w-7xl mx-20">
           <div>
             <div className="inline-block bg-emerald-400 text-white rounded px-3 py-1 mb-4">
               <span className="text-sm font-medium">Scores</span>

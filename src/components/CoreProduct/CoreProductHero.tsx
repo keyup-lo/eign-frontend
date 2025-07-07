@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import '../../styles/core_product/hero-section.css';
 
 export default function CoreProductHero() {
     return (
       <div className="h-screen bg-blue-700 text-white overflow-hidden flex items-center">
-        <div className="max-w-7xl mx-20 px-4 sm:px-6 lg:px-8 w-full">
+        <div className="holder max-w-7xl mx-20 px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex items-center justify-center gap-20">
             
             {/* Left Side - Content */}
@@ -45,7 +46,7 @@ export default function CoreProductHero() {
               alt="Company Logo"
               width={400}
               height={100}
-              className="cursor-pointer rounded-lg"
+              className="hero_img cursor-pointer rounded-lg"
             />
           </div>
         </div>
