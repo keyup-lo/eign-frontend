@@ -49,7 +49,7 @@ export default function Footer() {
           <div className='showdiv flex flex-col align-center gap-2'>
             <h2 className='font-medium text-green-400'>Quick Links</h2>
             <Link className='font-medium 'href='/about_us'>About us</Link>
-            <Link className='font-medium 'href='/product'>Product</Link>
+            <Link className='font-medium 'href='/core_product'>Product</Link>
             <Link className='font-medium 'href='/platform'>Platform</Link>
             <Link className='font-medium 'href='/contact'>Contact</Link>
             <Link className='font-medium 'href='/blog'>Blog</Link>
