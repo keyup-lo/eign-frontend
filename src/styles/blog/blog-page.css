@@ -1,0 +1,10 @@
+@media (max-width: 768px){
+    .page_holder{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .blog_info{
+        width: 100%;
+    }
+}
