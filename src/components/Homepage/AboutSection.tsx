@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import AboutButton from './AboutSection/AboutButton'
 import HouseSVG from './AboutSection/House'
-import '../styles/homepage/about-section.css';
+import '../../styles/homepage/about-section.css';
 
 export default function AboutSection() {
     return (

@@ -12,7 +12,7 @@ export default function IndexesSection() {
           </div>
   
           {/* Indexes Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-6">
               <Index
                 imageSrc="/images/homepage/index_1.png"
                 title="Living Index"

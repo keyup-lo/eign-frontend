@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import WWS from './WhoWeServeSection/WWS';
+import '../../styles/homepage/wws-section.css';
 
 export default function WhoWeServeSection() {
     return (
@@ -7,8 +8,8 @@ export default function WhoWeServeSection() {
   
         {/* Content */}
         <div className="relative z-10 h-full flex items-center px-4">
-          <div className="max-w-7xl mx-24 w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
+          <div className="container max-w-7xl mx-24 w-full">
+            <div className="holder grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
               
               {/* Left Side - Header */}
               <div className="text-white space-y-6">
@@ -27,12 +28,12 @@ export default function WhoWeServeSection() {
                   alt="Company Logo"
                   width={400}
                   height={400}
-                  className="cursor-pointer"
+                  className="wws-img cursor-pointer"
                 />
               </div>
   
               {/* Right Side - Service Cards */}
-              <div className="space-y-4 w-107 px-8 py-8 outline outline-green-300 backdrop-blur-md rounded-lg">
+              <div className="sc-holder space-y-4 w-107 px-8 py-8 outline outline-green-300 backdrop-blur-md rounded-lg">
                 <WWS 
                 imageSrc="/images/homepage/wws_1.png"
                 main_text='Real estate developers for site selection and pricing'/>

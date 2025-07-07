@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import '../../../styles/homepage/hiw/listitem.css';
 
 interface ItemsProps {
   imageSrc: string;
@@ -24,7 +25,7 @@ export default function ListItem({
             alt="Company Logo"
             width={100}
             height={100}
-            className={`cursor-pointer w-[${w}] h-[${h}]`}
+            className={`logo-img cursor-pointer w-[${w}] h-[${h}]`}
         />
         <div className='flex flex-col'>
           <h2 className='font-medium text-xl'>{title}</h2>

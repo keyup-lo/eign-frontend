@@ -7,6 +7,7 @@ import IndexesSection from '@/components/Homepage/IndexesSection';
 import WhoWeServeSection from '@/components/Homepage/WhoWeServeSection';
 import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
+import '../styles/homepage/page.css';
 
 export default function Home() {
   return (
@@ -17,7 +18,9 @@ export default function Home() {
       </div>
       <AboutSection />
       <HowItWorksSection />
-      <LocalContentSection />
+      <div className='lcs'>
+        <LocalContentSection />
+      </div>
       <IndexesSection />
       <WhoWeServeSection />
       <CTASection />
