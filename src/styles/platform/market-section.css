@@ -1,0 +1,25 @@
+@media (max-width: 768px){
+    .wue_img{
+        display: none;
+    }
+
+    .top_section{
+        flex-direction: column;
+    }
+
+    .market_stats{
+        width: 90%;
+    }
+
+    .market_insights{
+        width: 90%;
+    }
+
+    .wyg_holder{
+        flex-direction: column;
+    }
+
+    .wyg{
+        margin: 0 5%;
+    }
+}

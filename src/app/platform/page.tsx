@@ -6,6 +6,7 @@ import HeroSection from '@/components/Platform/HeroSection';
 import MarketInsightsSection from '@/components/Platform/MarketInsightsSection';
 import TrustedBySection from '@/components/Platform/TrustedBySection';
 import WhatYouCanDoSection from '@/components/Platform/WhatYouCanDoSection';
+import '../../styles/platform/page.css';
 
 export default function Platform() {
   return (
@@ -16,7 +17,9 @@ export default function Platform() {
       </div>
       <TrustedBySection />
       <WhatYouCanDoSection />
-      <LocalContentSection />
+      <div className='lcs'>
+        <LocalContentSection />
+      </div>
       <MarketInsightsSection />
       <CTASection />
       <Footer />
