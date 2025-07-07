@@ -1,0 +1,9 @@
+@media (max-width: 768px){
+    .hero_holder{
+        margin: 5% 10%;
+    }
+
+    .side_img{
+        display: none;
+    }
+}

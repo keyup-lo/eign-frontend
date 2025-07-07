@@ -1,0 +1,17 @@
+@media (max-width: 768px){
+    .contact_section{
+        flex-direction: column;
+    }
+
+    .holder{
+        margin: 0 5%;
+    }
+
+    .contact_info{
+        width: 90%;
+    }
+
+    .contact_form{
+        width: 90%;
+    }
+}

@@ -1,8 +1,9 @@
 import Image from 'next/image'
+import '../../styles/contact/hero-section.css';
 
 export default function ContactHeroSection() {
     return (
-      <div className="py-4 px-4 sm:px-6 lg:px-8 mx-20">
+      <div className="hero_holder py-4 px-4 sm:px-6 lg:px-8 mx-20">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
@@ -35,7 +36,7 @@ export default function ContactHeroSection() {
               alt="Company Logo"
               width={500}
               height={100}
-              className="cursor-pointer rounded-lg"
+              className="side_img cursor-pointer rounded-lg"
             />
           </div>
         </div>
