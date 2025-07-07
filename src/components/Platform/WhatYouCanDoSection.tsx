@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import '../../styles/platform/wycd-section.css';
 
 export default function WhatYouCanDoSection() {
     const features = [
@@ -70,7 +71,7 @@ export default function WhatYouCanDoSection() {
             </div>
   
             {/* Right Side - Widget/Map Preview */}
-            <div className="flex items-center justify-center">
+            <div className="wycd_img flex items-center justify-center">
               <Image
                 src="/images/platform/wycd.png"
                 alt="Company Logo"

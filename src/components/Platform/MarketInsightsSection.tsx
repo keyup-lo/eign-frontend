@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import WYG from './MarketInsightsSection/WYG';
 import WhoUses from './MarketInsightsSection/WhoUses';
+import '../../styles/platform/market-section.css';
+
 
 export default function MarketInsightsSection() {
     const dataEngineFeatures = [
@@ -79,10 +81,10 @@ export default function MarketInsightsSection() {
         <div className="max-w-7xl mx-auto">
           
           {/* Top Section - Market Stats and Insights */}
-          <div className="flex items-center justify-center gap-8 mb-10">
+          <div className="top_section flex items-center justify-center gap-8 mb-10">
             
             {/* Left - Market Stats Card */}
-            <div className="bg-blue-100 rounded-xl p-6 w-[25%]">
+            <div className="market_stats bg-blue-100 rounded-xl p-6 w-[25%]">
               <p className="text-gray-600 text-xs font-normal mb-4">Data</p>
               <h3 className="text-2xl font-semibold text-gray-900 mb-12">
                 Flexible Market Stats that Enhance User Experience
@@ -97,7 +99,7 @@ export default function MarketInsightsSection() {
             </div>
   
             {/* Right - Powerful Market Insights */}
-            <div className="bg-blue-700 rounded-2xl p-8 text-white flex flex-col items-center justify-center w-[45%] h-[25em]">
+            <div className="market_insights bg-blue-700 rounded-2xl p-8 text-white flex flex-col items-center justify-center w-[45%] h-[25em]">
               <h3 className="text-3xl font-bold mb-6">
                 Powerful Market <span className="text-blue-100 font-normal">Insights</span>
               </h3>
@@ -110,10 +112,10 @@ export default function MarketInsightsSection() {
           </div>
   
           {/* What you get Section */}
-          <div className="mb-20 mx-30">
+          <div className="wyg mb-20 mx-30">
             <h2 className="text-3xl font-semibold text-gray-900 text-center mb-12">What you get</h2>
             
-            <div className="flex items-center justify-center gap-5">
+            <div className="wyg_holder flex items-center justify-center gap-5">
               
               {/* Data Engine */}
               <WYG
@@ -163,7 +165,7 @@ export default function MarketInsightsSection() {
                   alt="Company Logo"
                   width={550}
                   height={500}
-                  className="cursor-pointer"
+                  className="wue_img cursor-pointer"
               />
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import '../../styles/platform/hero-section.css';
 
 export default function PlatformHeroSection() {
     return (
@@ -11,7 +12,7 @@ export default function PlatformHeroSection() {
             <div className="space-y-8">
               {/* Main Heading */}
               <div className="space-y-4">
-                <h1 className="text-4xl font-bold leading-tight">
+                <h1 className="hero_title text-4xl font-bold leading-tight">
                 <span className="text-emerald-400">Location Intelligence </span>
                   for Smarter Real Estate Strategy
                 </h1>
@@ -29,7 +30,7 @@ export default function PlatformHeroSection() {
                     Book a Demo
                   </button>
                 </Link>
-                <button className="bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 border border-white border-opacity-30 px-6 py-3 rounded-lg font-medium transition-all">
+                <button className="dsr_button bg-white bg-opacity-20 hover:bg-opacity-30 text-gray-800 border border-white border-opacity-30 px-6 py-3 rounded-lg font-medium transition-all">
                   Download Sample Report
                 </button>
               </div>
@@ -43,14 +44,14 @@ export default function PlatformHeroSection() {
                   alt="Company Logo"
                   width={200}
                   height={100}
-                  className="cursor-pointer"
+                  className="graph_img cursor-pointer"
                 />
                 <Image
                   src="/images/platform/hero_2.png"
                   alt="Company Logo"
                   width={200}
                   height={100}
-                  className="cursor-pointer"
+                  className="graph_img cursor-pointer"
                 />
               </div>
               <div>

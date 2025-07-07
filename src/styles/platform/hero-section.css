@@ -1,0 +1,10 @@
+@media (max-width: 768px){
+    .graph_img, .dsr_button{
+        display: none;
+    }
+
+    .hero_title{
+        font-size: x-large;
+        padding-top: 15%;
+    }
+}
