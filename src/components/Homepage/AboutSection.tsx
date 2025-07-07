@@ -59,7 +59,7 @@ export default function AboutSection() {
           <div className="text-center mb-4">
             <h2 className="text-3xl font-light text-black mb-14">What you get</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-6xl mx-auto">
+            <div className="houses flex flex-wrap items-center justify-center gap-16 max-w-6xl mx-auto">
               
               {/* Data Engine */}
               <HouseSVG
