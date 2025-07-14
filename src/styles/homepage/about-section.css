@@ -2,6 +2,12 @@
     margin-top: 5%
 }
 
+@media (max-width: 1200px) {
+    .houses{
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 768px){
     .wie{
         margin: 0 5%;
