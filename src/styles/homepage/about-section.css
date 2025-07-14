@@ -7,7 +7,6 @@
         flex-wrap: wrap;
     }
 }
-
 @media (max-width: 768px){
     .wie{
         margin: 0 5%;
