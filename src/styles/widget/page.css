@@ -1,0 +1,29 @@
+.search_holder{
+    display: flex;
+    gap: 20px;
+    width: 500px;
+    border: 1.5px #2563eb solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.search_holder > input{
+    border: none;
+    outline: none;
+    height: max-content;
+    width: 400px;
+}
+
+.search_button{
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.location_name{
+    
+}
