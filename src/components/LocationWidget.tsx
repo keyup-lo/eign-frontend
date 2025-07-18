@@ -263,9 +263,9 @@ export default function LocationWidget({
 
   // Your API configuration
   const GOOGLE_MAPS_API_KEY = "AIzaSyAeec6wFvJCA2yrKNsTQnRBvmY7DC-vA40";
-  const SCHOOLS_API_BASE_URL = "http://localhost:8000/api/schools";
-  const LIVING_API_BASE_URL = "http://localhost:8000/api/living";
-  const ACCESS_API_BASE_URL = "http://localhost:8000/api/transportation";
+  const SCHOOLS_API_BASE_URL = "https://locationapi-backend.azurewebsites.net/api/schools";
+  const LIVING_API_BASE_URL = "https://locationapi-backend.azurewebsites.net/api/living";
+  const ACCESS_API_BASE_URL = "https://locationapi-backend.azurewebsites.net/api/transportation";
 
 // Step 1: Convert location name to coordinates
 async function geocodeLocation(locationName: string): Promise<{ lat: number; lng: number } | null> {
