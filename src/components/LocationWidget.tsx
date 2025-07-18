@@ -16,6 +16,8 @@ interface LocationData {
         score: number;
         description: string;
         thisLocation: number;
+        category: string;
+        label: string;
       };
     };
     // Add comprehensive data
@@ -292,58 +294,112 @@ async function geocodeLocation(locationName: string): Promise<{ lat: number; lng
   }
 
   // Step 2: Fetch schools comprehensive data
-  async function fetchSchoolsData(lat: number, lng: number): Promise<SchoolsApiResponse> {
-    try {
-      const response = await fetch(
-        `${SCHOOLS_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`
-      );
-      
-      if (!response.ok) {
-        throw new Error(`Schools API error: ${response.status}`);
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('Schools API error:', error);
-      throw error;
-    }
-  }
+  // Replace your existing API functions with these enhanced versions
 
-  // Step 3: Fetch living quality comprehensive data
-  async function fetchLivingData(lat: number, lng: number): Promise<LivingApiResponse> {
-    try {
-      const response = await fetch(
-        `${LIVING_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`
-      );
-      
-      if (!response.ok) {
-        throw new Error(`Living API error: ${response.status}`);
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('Living API error:', error);
-      throw error;
+// Step 2: Fetch schools comprehensive data
+async function fetchSchoolsData(lat: number, lng: number): Promise<SchoolsApiResponse> {
+  try {
+    console.log(`🎓 Fetching schools data for ${lat}, ${lng}`);
+    const url = `${SCHOOLS_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`;
+    console.log('Schools API URL:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log('Schools API Response Status:', response.status);
+    console.log('Schools API Response Headers:', Object.fromEntries(response.headers.entries()));
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Schools API Error Response:', errorText);
+      throw new Error(`Schools API error: ${response.status} - ${errorText}`);
     }
+    
+    const data = await response.json();
+    console.log('Schools API Success:', data);
+    return data;
+  } catch (error) {
+    console.error('Schools API error:', error);
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error('Network error: Could not connect to schools API. Check CORS settings.');
+    }
+    throw error;
   }
+}
 
-  // Step 4: Fetch access comprehensive data
-  async function fetchAccessData(lat: number, lng: number): Promise<AccessApiResponse> {
-    try {
-      const response = await fetch(
-        `${ACCESS_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`
-      );
-      
-      if (!response.ok) {
-        throw new Error(`ACCESS API error: ${response.status}`);
-      }
-      
-      return await response.json();
-    } catch (error) {
-      console.error('ACCESS API error:', error);
-      throw error;
+// Step 3: Fetch living quality comprehensive data
+async function fetchLivingData(lat: number, lng: number): Promise<LivingApiResponse> {
+  try {
+    console.log(`🏠 Fetching living data for ${lat}, ${lng}`);
+    const url = `${LIVING_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`;
+    console.log('Living API URL:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log('Living API Response Status:', response.status);
+    console.log('Living API Response Headers:', Object.fromEntries(response.headers.entries()));
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Living API Error Response:', errorText);
+      throw new Error(`Living API error: ${response.status} - ${errorText}`);
     }
+    
+    const data = await response.json();
+    console.log('Living API Success:', data);
+    return data;
+  } catch (error) {
+    console.error('Living API error:', error);
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error('Network error: Could not connect to living API. Check CORS settings.');
+    }
+    throw error;
   }
+}
+
+// Step 4: Fetch access comprehensive data
+async function fetchAccessData(lat: number, lng: number): Promise<AccessApiResponse> {
+  try {
+    console.log(`🚗 Fetching access data for ${lat}, ${lng}`);
+    const url = `${ACCESS_API_BASE_URL}/comprehensive?lat=${lat}&lng=${lng}`;
+    console.log('Access API URL:', url);
+    
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    
+    console.log('Access API Response Status:', response.status);
+    console.log('Access API Response Headers:', Object.fromEntries(response.headers.entries()));
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.error('Access API Error Response:', errorText);
+      throw new Error(`Access API error: ${response.status} - ${errorText}`);
+    }
+    
+    const data = await response.json();
+    console.log('Access API Success:', data);
+    return data;
+  } catch (error) {
+    console.error('Access API error:', error);
+    if (error instanceof TypeError && error.message.includes('Failed to fetch')) {
+      throw new Error('Network error: Could not connect to access API. Check CORS settings.');
+    }
+    throw error;
+  }
+}
 
   function transformApiDataToLocationData(
     locationName: string,
